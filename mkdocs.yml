@@ -1,0 +1,9 @@
+site_name: Case - Folks
+
+theme:
+  name: material
+
+nav:
+  - Apresentação : index.md
+  - Documentações : 
+    - Documento de Arquitetura: arch/arch.md

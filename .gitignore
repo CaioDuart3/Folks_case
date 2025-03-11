@@ -1,0 +1,8 @@
+.venv
+.vscode
+commitlint
+.env
+.pytest_cache
+PyWhatKit_DB.txt
+__pycache__
+credentials
