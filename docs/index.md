@@ -1,17 +1,7 @@
-# Welcome to MkDocs
+# Apresentação do Case
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+O objetivo deste case é desenvolver um sistema inteligente e proativo, que seja
+capaz de identiﬁcar automaticamente os pacientes com solicitações de exames de imagem pendentes. O sistema deverá incentivar esses pacientes,
+através do envio de mensagens personalizadas via WhatsApp, a agendar seus exames dentro da rede do grupo hospitalar.
 
-## Commands
-
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+![Logo Folks](https://static.wixstatic.com/media/e50abb_401390f3cc9049639d7b960b4b3ac563~mv2.png/v1/fit/w_2500,h_1330,al_c/e50abb_401390f3cc9049639d7b960b4b3ac563~mv2.png)
