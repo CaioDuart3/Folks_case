@@ -24,13 +24,21 @@ O RabbitMQ gerencia a fila de envios, enquanto a API do WhatsApp efetivamente re
 ## 2. Representação Arquitetural
 ### 2.1 Definições
 <div style="text-align: justify; text-indent: 4em; ">
-arquitetura monolítica modular
+O padrão arquitetural utilizado neste sistema se trata da arquitetura monolítica modular, um estilo de desenvolvimento de software que combina a estrutura de uma aplicação monolítica com princípios de modularização. Nesse modelo, toda a aplicação é desenvolvida e implantada como uma única unidade, compartilhando o mesmo espaço de memória, banco de dados e recursos. No entanto, ao invés de ter um código monolítico rígido e difícil de manter, a aplicação é organizada em módulos independentes, cada um com suas próprias responsabilidades e lógica específica.
+</div>
+<div style="text-align: justify; text-indent: 4em; ">
+Essa modularização interna permite que cada módulo funcione como uma unidade autônoma dentro do monólito, facilitando a manutenção, a escalabilidade e o reaproveitamento de código. Embora o deploy ainda ocorra de forma conjunta, as mudanças realizadas em um módulo tendem a impactar menos outras partes da aplicação, tornando o processo de desenvolvimento mais seguro e eficiente.
+</div>
+<div style="text-align: justify; text-indent: 4em; ">
+A arquitetura monolítica modular é especialmente vantajosa para projetos que ainda não exigem uma abordagem mais complexa, como microsserviços, mas que precisam de uma estrutura organizada e preparada para crescer de forma sustentável. Essa abordagem é bastante utilizada em projetos que buscam equilíbrio entre simplicidade na implantação e boa separação de responsabilidades no código.
 </div>
 
 
 ### 2.2 Justificativa
 <div style="text-align: justify; text-indent: 4em; ">
 A escolhada monolitica modular foi motivada pela facilidade em atenter o problema e ser suficiente para isso, não complicando o problema e trazendo beneficios como:
+fácil manutenção, organização e reutilização de código, além de ser o mais fácil de aplicar os principios S.O.L.I.D, além disso traz outros beneficios como:
+
 </div>
 
 #### 2.2.1 Simplicidade de Implementação e  Implatação
