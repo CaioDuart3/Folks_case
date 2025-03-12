@@ -18,6 +18,7 @@
 <div style="text-align: justify; text-indent: 4em; ">
 A solução automatiza a identificação de pacientes aptos a realizar exames de imagem, utilizando uma abordagem inteligente e proativa. O processo começa com a coleta de dados diretamente das planilhas do Google Sheets, acessadas via API do Google Drive. A partir dessa base, a análise é realizada com base no código TUSS(para dados estruturados) e IA BioBERT( para dados não estruturados), que identifica receitas médicas e verifica a necessidade de exames de imagem. Os pacientes identificados são filtrados e recebem mensagens personalizadas via WhatsApp, incentivando-os a agendar os exames.
 </div>
+
 <div style="text-align: justify; text-indent: 4em; ">
 O RabbitMQ gerencia a fila de envios, enquanto a API do WhatsApp efetivamente realiza a comunicação com os pacientes. Os registros de envio são armazenados na mesma planilha de origem, facilitando o acompanhamento e análise dos dados. A integração com o Looker Studio permite a criação de dashboards para monitorar o desempenho do sistema, como a taxa de envio. A arquitetura do sistema garante automação e flexibilidade para ajustes conforme o volume de pacientes e evolução das necessidades, com foco na segurança e conformidade com normas de privacidade.
 </div>
@@ -98,30 +99,33 @@ A arquitetura modular facilita a adição de novos recursos e a manutenção do 
 O sistema deve ser compatível com navegadores modernos (Chrome, Firefox, Edge, Safari) e dispositivos móveis com tela mínima de 5 polegadas.
 </div>
 
-Justificativa: É importante garantir o acesso a diferentes formatos de dispostivos, impedindo que haja barreiras e limites tecnológicos.
+<b>Justificativa:</b> É importante garantir o acesso a diferentes formatos de dispostivos, impedindo que haja barreiras e limites tecnológicos.
 
 #### 4.2.2 Armazenamento de dados
+<div style="text-align: justify; text-indent: 4em; ">
 O sistema utilizará o Google Drive para armazenar planilhas CSV. O plano gratuito do Google Drive oferece 15 GB de armazenamento, o que é suficiente para armazenar as planilhas de dados estruturados e não estruturados.
+</div>
 
-Justificativa: Aproveitar a infraestrutura já disponível e escalável do Google Drive.
+<b>Justificativa:</b> Aproveitar a infraestrutura já disponível e escalável do Google Drive.
 
 #### 4.2.3 Visualização gráfica de dados
 A visualização de dados será realizada através do Streamlit para exibição de tabelas e do Looker Studio para gráficos interativos e relatórios.
 
-Justificativa: Essas ferramentas oferecem flexibilidade e são ideais para análise de dados em tempo real e visualização de grandes volumes de dados.
+<b>Justificativa:</b> Essas ferramentas oferecem flexibilidade e são ideais para análise de dados em tempo real e visualização de grandes volumes de dados.
 
 ---
 
 ## 5. Visão Lógica
 
-A visão lógica do sistema descreve a organização dos componentes e como eles se relacionam para oferecer as funcionalidades propostas. A aplicação é estruturada em três grandes camadas: **Interface**, **Models** e **Services**. Cada camada é composta por módulos que encapsulam responsabilidades específicas, facilitando a manutenção, evolução e reutilização do código.
+<div style="text-align: justify; text-indent: 4em; ">
 
+A visão lógica do sistema descreve a organização dos componentes e como eles se relacionam para oferecer as funcionalidades propostas. A aplicação é estruturada em três grandes camadas: <b>Interface</b>, <b>Models</b> e <b>Services</b>. Cada camada é composta por módulos que encapsulam responsabilidades específicas, facilitando a manutenção, evolução e reutilização do código.
 
+</div>
 
 ### Interface
 
 **Objetivo:**
-
 Oferecer uma interface simples e direta para que o usuário visualize tabelas, dashboards e interaja com o sistema utilizando o Streamlit. Essa camada é responsável por gerenciar as entradas do usuário, validar os dados e orquestrar as chamadas aos módulos de processamento e serviços de backend.
 
 **Principais Funcionalidades:**
@@ -180,8 +184,9 @@ Oferecer conexões e integrações com APIs externas e serviços de mensageria, 
     - `google_sheets.py`: Faz a conexão com as APIs do Google (Google Drive e Google Sheet).
 
 
-
-Essa visão lógica reflete uma abordagem modular dentro de um monólito, onde cada pacote (**Interface**, **Models** e **Services**) é responsável por uma parte distinta da aplicação. Essa separação promove a manutenção, a evolução e a integração eficiente do sistema com serviços externos.
+<div style="text-align: justify; text-indent: 4em; ">
+Essa visão lógica reflete uma abordagem modular dentro de um monólito, onde cada pacote (Interface, Models e Services) é responsável por uma parte distinta da aplicação. Essa separação promove a manutenção, a evolução e a integração eficiente do sistema com serviços externos.
+</div>
 
 ![Diagrama de Camadas](images/layers.png)
 
@@ -191,7 +196,11 @@ Figura 3 - Diagrama de Camadas
 ---
 
 ## 7. Visão de Implantação
+<div style="text-align: justify; text-indent: 4em; ">
+
 A Visão de Implantação descreve como o sistema será disponibilizado e executado no ambiente de produção. Essa seção abordará as tecnologias escolhidas para a construção e execução do sistema, como Python, RabbitMQ e Docker, destacando suas justificativas. Além disso, apresentará a estratégia de implantação em serviços cloud.
+
+</div>
 
 ### 7.1 Tecnologias e Justificativas
 
@@ -250,37 +259,52 @@ A orquestração dos contêineres será gerida diretamente pelo Cloud Run, dispe
 ---
 
 ## 8. Restrições Adicionais
-
+<div style="text-align: justify; text-indent: 4em; ">
 As restrições adicionais do sistema foram definidas para garantir que o software atenda aos requisitos de negócios e de qualidade necessários ao seu funcionamento, além de proporcionar uma experiência segura e eficiente para o usuário.
+</div>
 
 ### Restrições de Negócios
-- Autenticação Obrigatória
+<b>Autenticação Obrigatória:</b>
+
+<div style="text-align: justify; text-indent: 4em; ">
 O sistema será acessível diretamente pela internet, mas exigirá que usuários previamente cadastros se autentiquem utilizando credenciais específicas (usuário e senha)
+</div>
 
-Justificativa: A autenticação garante que somente usuários autorizados tenham acesso às informações sensíveis dos clientes.
+- <b>Justificativa: </b>A autenticação garante que somente usuários autorizados tenham acesso às informações sensíveis dos clientes.
 
-- Acesso Restrito a Perfis em Serviços da Google
+<b>Acesso Restrito a Perfis em Serviços da Google:</b>
 
+<div style="text-align: justify; text-indent: 4em; ">
 Funcionalidades críticas, como inserção, edição, remoção e visualização de dados das planilhas via serviços do Google, como Google Drive e Looker studio, necessitam de autorização sobre aquele documento na plataforma (Google Drive, Looker Studio) seja pra inserir, editar, visualizar ou deletar.
+</div> 
 
-Justificativa: A segmentação de funcionalidades por perfis de acesso melhora a segurança e organização do fluxo de trabalho.
+- <b>Justificativa:</b> A segmentação de funcionalidades por perfis de acesso melhora a segurança e organização do fluxo de trabalho.
 
 ### Restrições de Qualidade
 
-- Usabilidade
+<b>Usabilidade:</b>
+
+<div style="text-align: justify; text-indent: 4em; ">
 O sistema possui uma interface amigável e intuitiva para aqueles com menores experiências em análise de dados, e para os mais experientes oferecem a visualização de dados pelo looker studio, onde possui painel interativo.
+</div>
 
-Justificativa: Um design flexível facilita o uso do sistema por diferentes perfis de usuários com diferentes graus do conhecimento.
+- <b>Justificativa:</b> Um design flexível facilita o uso do sistema por diferentes perfis de usuários com diferentes graus do conhecimento.
 
-- Portabilidade
+<b>Portabilidade:</b>
+
+<div style="text-align: justify; text-indent: 4em; ">
 O software será compatível com dispositivos móveis (Android e iOS) e navegadores modernos (Chrome, Firefox, Safari, Edge).
+</div>
 
-Justificativa: Garantir o acesso em múltiplas plataformas facilita o uso por usuários em diferentes contextos e dispositivos.
+- <b>Justificativa:</b> Garantir o acesso em múltiplas plataformas facilita o uso por usuários em diferentes contextos e dispositivos.
 
-- Manutenibilidade
+<b>Manutenibilidade:</b>
+
+<div style="text-align: justify; text-indent: 4em; ">
 O código é modular e bem documentado, seguindo os padrões de desenvolvimento, para facilitar correções de erros e futuras expansões.
-.
-Justificativa: A capacidade de realizar manutenção eficiente é fundamental para garantir a evolução contínua do sistema e atender a novas demandas.
+</div>
+
+- <b>Justificativa:</b> A capacidade de realizar manutenção eficiente é fundamental para garantir a evolução contínua do sistema e atender a novas demandas.
 
 ---
 

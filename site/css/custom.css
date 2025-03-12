@@ -1,0 +1,14 @@
+/* Alterar a cor de fundo da header */
+.md-header {
+    background-color: #334bff; /* Cor desejada */
+}
+
+/* Alterar a cor do texto da header */
+.md-header a {
+    color: white; /* Cor do texto */
+}
+
+/* Alterar a cor de hover do link */
+.md-header a:hover {
+    color: #dbdbdb; /* Cor do texto ao passar o mouse */
+}
