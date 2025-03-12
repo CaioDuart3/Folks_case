@@ -1,5 +1,3 @@
-import pandas as pd
-import streamlit as st
 from decouple import config
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
@@ -32,30 +30,21 @@ class GoogleSheetsClient:
 
     def get_data(self, spreadsheet_title:str, folder_id:str) -> gspread.worksheet.Worksheet:
         """ Retorna a planilha no formato do gspread, formato este útil para a manipulação e atualização na Web"""
+
         sheet = self.client.open(title=spreadsheet_title, folder_id=folder_id) # Retorna toda planilha com N páginas
         worksheet = sheet.get_worksheet(0) # Retorna somente a primeira página da planilha com N páginas
         return worksheet
     
 
-def get_data_worksheet(title: str, folder_id: str):
+def get_data_worksheet(title: str, folder_id: str) -> gspread.worksheet.Worksheet:
     """ Conecta com as APIs do Google Sheet e  Google Drive e extrai a primeira página da planilha """
+
     googleSheet = GoogleSheetsClient(credentials_path)
     wk = googleSheet.get_data(
         spreadsheet_title=title,
         folder_id=folder_id
     )
     return wk
-
-
-
-
-# obj_google = GoogleSheetsClient(config("SERVICE_ACCOUNT"))
-# data = obj_google.get_data(config("SPREADSHEET_TITLE_STRUCTURED"), config("FOLDER_ID"))
-
-
-
-# print(data)
-# print(type(data))
 
 
 
