@@ -1,13 +1,13 @@
-# Tutorial Completo: Rodando um Projeto Python com Docker e APIs do Google
+# Tutorial Completo de Como Executar o Sistema
 
-Este tutorial irá guiá-lo na configuração e execução de um projeto Python que integra as APIs do Google Sheets e Google Drive para manipulação de dados de planilhas, e utiliza RabbitMQ para enviar mensagens via WhatsApp. O sistema é executado dentro de um ambiente Docker, garantindo a portabilidade e isolamento do projeto.
+Este tutorial irá guiá-lo na configuração e execução de um projeto Python que integra as APIs do Google Sheets e Google Drive para manipulação de dados de planilhas, e utiliza RabbitMQ para enviar mensagens via WhatsApp.
 
 ## Funcionalidades do Projeto
 
 - **Integração com Google Sheets e Google Drive:** O sistema lê dados de planilhas públicas ou privadas utilizando a API do Google Sheets, sem necessidade de autenticação avançada.
 - **Análise de Dados:** A análise é feita para identificar quais clientes estão aptos a receber mensagens, com base no código TUSS ou com o uso da IA **BioBERT**, que analisa receitas médicas.
 - **Envio de Mensagens via WhatsApp:** Após a filtragem, o sistema envia mensagens aos clientes aptos utilizando RabbitMQ para orquestrar o processo de envio.
-- **Armazenamento de Dados:** O status do envio de mensagens e os registros são salvos diretamente nas planilhas do Google, permitindo análise posterior no Looker Studio.
+- **Armazenamento de Dados:** O status do envio de mensagens e os registros são salvos diretamente nas planilhas do Google, permitindo análise posterior no Streamlit e no Looker Studio com dashboard interativas.
 
 ## Tecnologias Utilizadas
 
@@ -15,18 +15,18 @@ Este tutorial irá guiá-lo na configuração e execução de um projeto Python 
 - **Google Sheets API:** Para leitura e escrita de dados em planilhas do Google Sheets.
 - **Google Drive API:** Para manipulação de arquivos armazenados no Google Drive.
 - **RabbitMQ:** Para orquestrar o envio de mensagens de forma assíncrona.
-- **Docker:** Para empacotar o projeto e executar o sistema de forma isolada e controlada.
+- **Docker:** Para empacotar o RabbitMQ.
 - **Streamlit:** Para criar uma interface simples e visualização dos dados do sistema.
 
 ## Pré-requisitos
 
 Antes de rodar o projeto, verifique se você tem os seguintes pré-requisitos instalados:
 
-- **Docker:** Para executar o projeto em um container.
-- **Python 3.12 ou superior:** Para rodar o código Python.
-- **Pip:** Gerenciador de pacotes do Python.
-- **Conta do Google com permissões de acesso às APIs do Google Sheets e Google Drive:** (Veja a seção de configuração de APIs abaixo).
-- **RabbitMQ:** Para orquestrar o envio de mensagens.
+- **Docker:** Para executar o projeto em um contêiner. [Documentação do Docker](https://docs.docker.com/get-started/).
+- **Python 3.12 ou superior:** Para rodar o código Python. [Documentação do Python](https://docs.python.org/pt-br/3/).
+- **Pip:** Gerenciador de pacotes do Python. [Guia de instalação do Pip e ambientes virtuais](https://packaging.python.org/pt-br/latest/guides/installing-using-pip-and-virtual-environments/).
+- **Conta do Google com permissões de acesso às APIs do Google Sheets e Google Drive:** [Como obter a conta do Google com permissões?](https://youtu.be/6XaF4ZF7LW0?feature=shared&t=530).
+- **RabbitMQ:** Para orquestrar o envio de mensagens. [Como instalar o RabbitMQ?](https://youtu.be/6XaF4ZF7LW0?feature=shared&t=530).
 
 ## Passo a Passo: Como Configurar o Projeto
 
@@ -43,7 +43,7 @@ cd projeto
 No diretório raiz do projeto, adicione os seguintes arquivos para configurar o sistema:
 
 1. **Arquivo `.env`**: Contém as variáveis de ambiente necessárias para a configuração do projeto.
-2. **Arquivo `credentials/sua-api-key.json`**: Este arquivo contém as credenciais de acesso para as APIs do Google (veja abaixo como obtê-lo).
+2. **Arquivo `credentials/sua-api-key.json`**: Este arquivo contém as credenciais da conta de serviço da google com acesso para as APIs do Google.
 
 #### Exemplo de configuração do `.env`:
 
