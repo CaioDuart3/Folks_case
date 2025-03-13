@@ -4,9 +4,14 @@ Este tutorial irá guiá-lo na configuração e execução de um projeto Python 
 
 ## Funcionalidades do Projeto
 
-- **Integração com Google Sheets e Google Drive:** O sistema lê dados de planilhas públicas ou privadas utilizando a API do Google Sheets, sem necessidade de autenticação avançada.
-- **Análise de Dados:** A análise é feita para identificar quais clientes estão aptos a receber mensagens, com base no código TUSS ou com o uso da IA **BioBERT**, que analisa receitas médicas.
+- **Integração com Google Sheets e Google Drive:** O sistema lê dados de planilhas públicas ou privadas utilizando a APIs do Google.
+
+- **Análise de Dados:** A análise é feita para identificar quais clientes estão aptos a receber mensagens, com base no código TUSS ou com o uso da IA.
+
+- **BioBERT**, que analisa receitas médicas.
+
 - **Envio de Mensagens via WhatsApp:** Após a filtragem, o sistema envia mensagens aos clientes aptos utilizando RabbitMQ para orquestrar o processo de envio.
+
 - **Armazenamento de Dados:** O status do envio de mensagens e os registros são salvos diretamente nas planilhas do Google, permitindo análise posterior no Streamlit e no Looker Studio com dashboard interativas.
 
 ## Tecnologias Utilizadas
