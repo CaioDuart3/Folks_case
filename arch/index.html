@@ -612,9 +612,42 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#9-bibliografia" class="md-nav__link">
+  <a href="#9-melhorias-e-riscos" class="md-nav__link">
     <span class="md-ellipsis">
-      9. Bibliografia
+      9. Melhorias e Riscos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Melhorias e Riscos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#riscos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Riscos:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#melhorias-propostas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Melhorias Propostas:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-bibliografia" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Bibliografia
     </span>
   </a>
   
@@ -946,9 +979,42 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#9-bibliografia" class="md-nav__link">
+  <a href="#9-melhorias-e-riscos" class="md-nav__link">
     <span class="md-ellipsis">
-      9. Bibliografia
+      9. Melhorias e Riscos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Melhorias e Riscos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#riscos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Riscos:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#melhorias-propostas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Melhorias Propostas:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-bibliografia" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Bibliografia
     </span>
   </a>
   
@@ -1319,7 +1385,23 @@ O código é modular e bem documentado, seguindo os padrões de desenvolvimento,
 <li><b>Justificativa:</b> A capacidade de realizar manutenção eficiente é fundamental para garantir a evolução contínua do sistema e atender a novas demandas.</li>
 </ul>
 <hr />
-<h2 id="9-bibliografia">9. Bibliografia</h2>
+<h2 id="9-melhorias-e-riscos">9. Melhorias e Riscos</h2>
+<p>Este documento descreveu a arquitetura atual adotada para resolver o problema, abordando tecnologias, lógica de implementação e outros aspectos relevantes. No entanto, algumas limitações e riscos foram identificados, os quais precisam ser considerados para melhorar a eficiência e robustez do sistema:</p>
+<h3 id="riscos">Riscos:</h3>
+<ul>
+<li><strong>Falta de testes:</strong> A ausência de uma cobertura de testes pode resultar em falhas não previstas no sistema, comprometendo sua estabilidade e a confiabilidade dos dados.</li>
+<li><strong>Desempenho do modelo de ML (BioBERT):</strong> O modelo pré-treinado utilizado para análise de dados apresenta um desempenho subótimo, levando aproximadamente 10 minutos para processar cerca de 2.500 registros aleatórios. Esse tempo de processamento pode se tornar um gargalo à medida que o volume de dados cresce.</li>
+</ul>
+<h3 id="melhorias-propostas">Melhorias Propostas:</h3>
+<ul>
+<li><strong>Implementação de testes:</strong> A introdução de testes unitários e de integração garantiria maior estabilidade e facilitaria a identificação de erros durante o desenvolvimento.</li>
+<li><strong>Treinamento de modelo de ML específico:</strong> Substituir o modelo de ML pré-treinado por um modelo customizado e treinado especificamente para a tarefa de análise de receitas, melhorando a precisão e eficiência do processamento.</li>
+<li><strong>Substituição das planilhas por um banco de dados robusto:</strong> Migrar o armazenamento de dados de planilhas para uma solução de banco de dados mais escalável e eficiente, como o Supabase, oferecendo maior confiabilidade e desempenho.</li>
+<li><strong>Revisão da arquitetura e integração total no Streamlit:</strong> Consolidar a aplicação no Streamlit, integrando diretamente com as APIs do Google (Sheets e Drive), para melhorar a interação e facilitar o fluxo de dados, simplificando a gestão da aplicação.</li>
+</ul>
+<p>Essas melhorias visam otimizar o desempenho do sistema, reduzir riscos operacionais e aumentar a escalabilidade para atender a futuros desafios.</p>
+<hr />
+<h2 id="10-bibliografia">10. Bibliografia</h2>
 <p>DOCKER. <em>Documentação oficial do Docker</em>. Disponível em: <a href="https://docs.docker.com/">https://docs.docker.com/</a>. Acesso em: 12 mar. 2025.</p>
 <p>RABBITMQ. <em>Documentação oficial do RabbitMQ</em>. Disponível em: <a href="https://www.rabbitmq.com/docs">https://www.rabbitmq.com/docs</a>. Acesso em: 12 mar. 2025.</p>
 <p>RABBITMQ COM PYTHON. <em>RabbitMQ com Python</em>. Disponível em: <a href="https://youtu.be/6PHr1NwlQaU?si=Zn_N5KD4kkzUnwiJ">https://youtu.be/6PHr1NwlQaU?si=Zn_N5KD4kkzUnwiJ</a>.</p>
