@@ -96,6 +96,12 @@ source venv/bin/activate
 .venv\Scripts\activate
 
 ```
+Após isso, insira este comando ainda na raiz do projeto para baixar as dependências do sistema:
+
+``` bash
+pip install -r requirements.txt
+```
+
 ### Passo4 - Executar o projeto
 Para executar o projeto e visualizar pela interface gráfica do streamlit utilize o comando:
 ``` bash
