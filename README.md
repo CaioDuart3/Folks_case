@@ -19,7 +19,7 @@ Este tutorial irá guiá-lo na configuração e execução de um projeto Python 
 - **Python:** Linguagem principal para a lógica do sistema.
 - **Google Sheets API:** Para leitura e escrita de dados em planilhas do Google Sheets.
 - **Google Drive API:** Para manipulação de arquivos armazenados no Google Drive.
-- **RabbitMQ:** Para orquestrar o envio de mensagens de forma assíncrona.
+- **RabbitMQ:** Serviço de mensageria com o envio de mensagens de forma assíncrona.
 - **Docker:** Para empacotar o RabbitMQ.
 - **Streamlit:** Para criar uma interface simples e visualização dos dados do sistema.
 
