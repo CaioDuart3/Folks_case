@@ -31,7 +31,7 @@ Antes de rodar o projeto, verifique se você tem os seguintes pré-requisitos in
 - **Python 3.12 ou superior:** Para rodar o código Python. [Documentação do Python](https://docs.python.org/pt-br/3/).
 - **Pip:** Gerenciador de pacotes do Python. [Guia de instalação do Pip e ambientes virtuais](https://packaging.python.org/pt-br/latest/guides/installing-using-pip-and-virtual-environments/).
 - **Conta do Google com permissões de acesso às APIs do Google Sheets e Google Drive:** [Como obter a conta do Google com permissões?](https://youtu.be/6XaF4ZF7LW0?feature=shared&t=530).
-- **RabbitMQ:** Para orquestrar o envio de mensagens. [Como instalar o RabbitMQ?](https://youtu.be/6XaF4ZF7LW0?feature=shared&t=530).
+- **RabbitMQ:** Como message broker, garantindo o envio de mensagens. [Como instalar o RabbitMQ?](https://youtu.be/6XaF4ZF7LW0?feature=shared&t=530).
 
 ## Passo a Passo: Como Configurar o Projeto
 
