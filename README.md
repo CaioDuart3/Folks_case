@@ -4,9 +4,14 @@ Este tutorial irá guiá-lo na configuração e execução de um projeto Python 
 
 ## Funcionalidades do Projeto
 
-- **Integração com Google Sheets e Google Drive:** O sistema lê dados de planilhas públicas ou privadas utilizando a API do Google Sheets, sem necessidade de autenticação avançada.
-- **Análise de Dados:** A análise é feita para identificar quais clientes estão aptos a receber mensagens, com base no código TUSS ou com o uso da IA **BioBERT**, que analisa receitas médicas.
+- **Integração com Google Sheets e Google Drive:** O sistema lê dados de planilhas públicas ou privadas utilizando a APIs do Google.
+
+- **Análise de Dados:** A análise é feita para identificar quais clientes estão aptos a receber mensagens, com base no código TUSS ou com o uso da IA.
+
+- **BioBERT**, que analisa receitas médicas.
+
 - **Envio de Mensagens via WhatsApp:** Após a filtragem, o sistema envia mensagens aos clientes aptos utilizando RabbitMQ para orquestrar o processo de envio.
+
 - **Armazenamento de Dados:** O status do envio de mensagens e os registros são salvos diretamente nas planilhas do Google, permitindo análise posterior no Streamlit e no Looker Studio com dashboard interativas.
 
 ## Tecnologias Utilizadas
@@ -14,7 +19,7 @@ Este tutorial irá guiá-lo na configuração e execução de um projeto Python 
 - **Python:** Linguagem principal para a lógica do sistema.
 - **Google Sheets API:** Para leitura e escrita de dados em planilhas do Google Sheets.
 - **Google Drive API:** Para manipulação de arquivos armazenados no Google Drive.
-- **RabbitMQ:** Para orquestrar o envio de mensagens de forma assíncrona.
+- **RabbitMQ:** Serviço de mensageria com o envio de mensagens de forma assíncrona.
 - **Docker:** Para empacotar o RabbitMQ.
 - **Streamlit:** Para criar uma interface simples e visualização dos dados do sistema.
 
@@ -26,7 +31,7 @@ Antes de rodar o projeto, verifique se você tem os seguintes pré-requisitos in
 - **Python 3.12 ou superior:** Para rodar o código Python. [Documentação do Python](https://docs.python.org/pt-br/3/).
 - **Pip:** Gerenciador de pacotes do Python. [Guia de instalação do Pip e ambientes virtuais](https://packaging.python.org/pt-br/latest/guides/installing-using-pip-and-virtual-environments/).
 - **Conta do Google com permissões de acesso às APIs do Google Sheets e Google Drive:** [Como obter a conta do Google com permissões?](https://youtu.be/6XaF4ZF7LW0?feature=shared&t=530).
-- **RabbitMQ:** Para orquestrar o envio de mensagens. [Como instalar o RabbitMQ?](https://youtu.be/6XaF4ZF7LW0?feature=shared&t=530).
+- **RabbitMQ:** Como message broker, garantindo o envio de mensagens. [Como instalar o RabbitMQ?](https://youtu.be/6XaF4ZF7LW0?feature=shared&t=530).
 
 ## Passo a Passo: Como Configurar o Projeto
 
@@ -91,6 +96,12 @@ source venv/bin/activate
 .venv\Scripts\activate
 
 ```
+Após isso, insira este comando ainda na raiz do projeto para baixar as dependências do sistema:
+
+``` bash
+pip install -r requirements.txt
+```
+
 ### Passo4 - Executar o projeto
 Para executar o projeto e visualizar pela interface gráfica do streamlit utilize o comando:
 ``` bash
