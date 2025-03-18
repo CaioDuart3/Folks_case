@@ -56,6 +56,8 @@ class UserInterface:
 
         if st.button("Enviar mensagem"):
             SendMessageInterface(self.worksheet_structured, None).publish_message()
+            SendMessageInterface(self.worksheet_structured, None).consumer_message()
+            print(f"✅ Mensagem enviadas com sucesso!")
 
     def show_no_structured_data(self):
         """ Mostra os dados NÃO estruturados quando filtrado pelo mesmo"""
@@ -66,6 +68,9 @@ class UserInterface:
 
         if st.button("Enviar mensagem"):
             SendMessageInterface(None, self.worksheet_no_structured).publish_message()
+            SendMessageInterface(None, self.worksheet_no_structured).consumer_message()
+            print(f"✅ Mensagem enviadas com sucesso!")
+            
 
     def show_all_data(self):
         """ Mostra todos os dados quando filtrado pelo mesmo"""
@@ -80,3 +85,5 @@ class UserInterface:
 
         if st.button("Enviar mensagem"):
             SendMessageInterface(self.worksheet_structured, self.worksheet_no_structured).publish_message()
+            SendMessageInterface(self.worksheet_structured, self.worksheet_no_structured).consumer_message()
+            print(f"✅ Mensagem enviadas com sucesso!")

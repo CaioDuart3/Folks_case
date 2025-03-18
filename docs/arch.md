@@ -306,9 +306,28 @@ O código é modular e bem documentado, seguindo os padrões de desenvolvimento,
 
 - <b>Justificativa:</b> A capacidade de realizar manutenção eficiente é fundamental para garantir a evolução contínua do sistema e atender a novas demandas.
 
+
 ---
 
-## 9. Bibliografia
+## 9. Melhorias e Riscos
+
+Este documento descreveu a arquitetura atual adotada para resolver o problema, abordando tecnologias, lógica de implementação e outros aspectos relevantes. No entanto, algumas limitações e riscos foram identificados, os quais precisam ser considerados para melhorar a eficiência e robustez do sistema:
+
+### Riscos:
+- **Falta de testes:** A ausência de uma cobertura de testes pode resultar em falhas não previstas no sistema, comprometendo sua estabilidade e a confiabilidade dos dados.
+- **Desempenho do modelo de ML (BioBERT):** O modelo pré-treinado utilizado para análise de dados apresenta um desempenho subótimo, levando aproximadamente 10 minutos para processar cerca de 2.500 registros aleatórios. Esse tempo de processamento pode se tornar um gargalo à medida que o volume de dados cresce.
+
+### Melhorias Propostas:
+- **Implementação de testes:** A introdução de testes unitários e de integração garantiria maior estabilidade e facilitaria a identificação de erros durante o desenvolvimento.
+- **Treinamento de modelo de ML específico:** Substituir o modelo de ML pré-treinado por um modelo customizado e treinado especificamente para a tarefa de análise de receitas, melhorando a precisão e eficiência do processamento.
+- **Substituição das planilhas por um banco de dados robusto:** Migrar o armazenamento de dados de planilhas para uma solução de banco de dados mais escalável e eficiente, como o Supabase, oferecendo maior confiabilidade e desempenho.
+- **Revisão da arquitetura e integração total no Streamlit:** Consolidar a aplicação no Streamlit, integrando diretamente com as APIs do Google (Sheets e Drive), para melhorar a interação e facilitar o fluxo de dados, simplificando a gestão da aplicação.
+
+Essas melhorias visam otimizar o desempenho do sistema, reduzir riscos operacionais e aumentar a escalabilidade para atender a futuros desafios.
+
+---
+
+## 10. Bibliografia
 
 DOCKER. *Documentação oficial do Docker*. Disponível em: <https://docs.docker.com/>. Acesso em: 12 mar. 2025.
 

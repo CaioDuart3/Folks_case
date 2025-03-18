@@ -34,7 +34,7 @@ class RabbitmqConsumer:
                 auto_ack=True,
                 on_message_callback=self.__callback
             )
-            print(f"✅ Conexão estabelecida com a fila '{self.__queue}'")
+            print(f"✅ Conexão de consumo estabelecida com a fila '{self.__queue}'")
         except Exception as e:
             print(f"❌ Erro ao conectar no RabbitMQ: {e}")
             raise
@@ -62,8 +62,7 @@ def callback(ch, method, properties, body):
 
         # whatsapp_messenger = WhatsAppMessenger()
         # whatsapp_messenger.send_message(phone_number, text)
-
-        print(f"✅ Mensagem enviada para {phone_number}")
+        
     except Exception as e:
         print(f"❌ Erro ao enviar mensagem para o WhatsApp: {e}")
 

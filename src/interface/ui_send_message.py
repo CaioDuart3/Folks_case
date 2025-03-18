@@ -1,5 +1,7 @@
 from models.exam_classifier import ExamClassifier
 from services.publisher import RabbitmqPublisher
+from services.consumer import RabbitmqConsumer
+from services.consumer import callback
 from interface.update_sheet import WorksheetUpdater
 from interface.message_sender import MessageSender
 from interface.structured_processor import StructuredDataProcessor
@@ -28,6 +30,8 @@ class SendMessageInterface:
         # Composições
         self.classifier = ExamClassifier() # Para classificar os dados utilizando ML
         self.obj_publisher = RabbitmqPublisher() # Para fazer injeção de dependência ao enviar mensagens
+        self.obj_consumer = RabbitmqConsumer(callback)
+
 
     def _get_dataframe(self, worksheet: Optional[gspread.worksheet.Worksheet]) -> pd.DataFrame:
         """ 
@@ -43,7 +47,7 @@ class SendMessageInterface:
         start_time = time.time() # Marcar o tempo para enviar as mensagens desde o clique até a publicaçãodas mensagens na fila.
 
         message_sender = MessageSender(self.obj_publisher) # Objeto útil para fazer a injeção para publicar as mensagens independente da estrutura dos dados.
-
+        
         # Atualiza as planilha após os registros das mensagens e suas emissões, Espera-se None ou um objeto gspread
         worksheet_updater_structured = WorksheetUpdater(self.worksheet_structured) 
         worksheet_updater_no_structured = WorksheetUpdater(self.worksheet_no_structured) 
@@ -62,5 +66,10 @@ class SendMessageInterface:
         end_time = time.time()
         execution_time = round(end_time - start_time, 2 ) # Arredondando 2 casas decimais
 
+        print(f"Mensagens publicadas com sucesso em {execution_time} segundos!")
         st.write(f"Mensagens publicadas com sucesso em {execution_time} segundos!") 
+
+    def consumer_message(self):
+        self.obj_consumer.start()
+
 
